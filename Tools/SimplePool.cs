@@ -60,7 +60,6 @@ public static class SimplePool
                     // We don't have an object in our pool, so we
                     // instantiate a whole new object.
                     obj = GameObject.Instantiate(prefab, pos, rot);
-                    obj.transform.SetParent(PrefabStorage.Instance.transform, true);
 #if LOG_HACK
                     obj.name = string.Format("{0} ({1})", prefab.name, nextId++);
 #endif
@@ -235,7 +234,6 @@ public static class SimplePool
         else
         {
             pm.myPool.Despawn(obj);
-            pm.transform.SetParent(PrefabStorage.Instance.transform, true);
         }
     }
     /// <summary>
