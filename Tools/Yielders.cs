@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace Unicorn
-{
     /// <summary>
     /// Giảm GarbageCollector khi dùng Coroutine
     /// </summary>
@@ -39,4 +37,3 @@ namespace Unicorn
 
         #endregion
     }
-}
