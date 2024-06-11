@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Sirenix.OdinInspector;
 public class AnimTopDown : AnimBase
 {
-    [FoldoutGroup("Set Up")] [SerializeField] private float posY;
-    [FoldoutGroup("Set Up")] [SerializeField] private AnimationCurve animCurveOpen;
-    [FoldoutGroup("Set Up")] [SerializeField] private AnimationCurve animCurveClose;
+    [SerializeField] private float posY;
+    [SerializeField] private AnimationCurve animCurveOpen;
+    [SerializeField] private AnimationCurve animCurveClose;
 
     private Tweener tweenScaleOpen;
     private Tweener tweenScaleClose;
-    public override void Open(Transform content, float duration)
+    public override void Open(RectTransform content, float duration)
     {
         Vector3 ThePos = content.localPosition;
         ThePos.y = -500;
@@ -20,7 +19,7 @@ public class AnimTopDown : AnimBase
             .SetUpdate(true)
             .SetEase(animCurveOpen);
     }
-    public override void Close(Transform content, float duration)
+    public override void Close(RectTransform content, float duration)
     {
         tweenScaleClose = content.DOLocalMoveY(-1000, duration)
            .SetUpdate(true)

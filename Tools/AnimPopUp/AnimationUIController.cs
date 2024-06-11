@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationUIController : MonoBehaviour
 {
-    [SerializeField] private Transform content;
+    [SerializeField] private RectTransform content;
     [SerializeField] private float durationClose;
     [SerializeField] private float durationOpen;
     [SerializeField] private AnimBase animUI;
@@ -12,7 +12,6 @@ public class AnimationUIController : MonoBehaviour
     private void OnEnable()
     {
         animUI.Open(content, durationOpen);
-        GameManager.Instance.audioManager.PlaySoundPopUp();
     }
     public void ClosePopUp() // call in funcion exit popup
     {
